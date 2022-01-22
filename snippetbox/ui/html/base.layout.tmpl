@@ -12,6 +12,11 @@
       <h1><a href="/">Snippetbox</a></h1>
     </header>
     <nav><a href="/">Home</a></nav>
+
+    {{block "sidebar" .}}
+    <p>Default content</p>
+    {{ end }}
+
     <section>
       {{template "body" .}}
     </section>
