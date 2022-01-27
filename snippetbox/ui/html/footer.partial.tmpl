@@ -3,7 +3,9 @@
   <footer
     class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
   >
-    <p class="col-md-4 mb-0 text-muted">&copy; 2021 Company, Inc</p>
+    <p class="col-md-4 mb-0 text-muted">
+      &copy; <span id="year"></span> Company, Inc
+    </p>
 
     <ul class="nav col-md-4 justify-content-end">
       <!-- <li class="nav-item">
@@ -14,5 +16,10 @@
       </li>
     </ul>
   </footer>
+  <script>
+    const id = document.getElementById("year");
+    const today = new Date();
+    id.innerHTML = today.getFullYear();
+  </script>
 </div>
 {{ end }}
