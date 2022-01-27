@@ -23,7 +23,6 @@ func main() {
 		errorLog: errorLog,
 		infoLog:  infoLog,
 	}
-	_ = app
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", app.home)
