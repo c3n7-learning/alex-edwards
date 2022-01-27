@@ -7,12 +7,14 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/c3n7/alex-edwards/snippetbox/pkg/models/postgresql"
 	_ "github.com/lib/pq"
 )
 
 type application struct {
 	errorLog *log.Logger
 	infoLog  *log.Logger
+	snippets *postgresql.SnippetModel
 }
 
 func main() {
@@ -35,6 +37,7 @@ func main() {
 	app := &application{
 		errorLog: errorLog,
 		infoLog:  infoLog,
+		snippets: &postgresql.SnippetModel{DB: db},
 	}
 
 	srv := &http.Server{
