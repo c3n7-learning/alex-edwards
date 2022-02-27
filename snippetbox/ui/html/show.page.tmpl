@@ -1,0 +1,21 @@
+{{template "base" .}}
+
+{{define "title"}}Snippet #{{.ID}}{{ end }}
+
+{{define "body"}}
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <strong>{{.Title}}</strong>
+    <span>{{.ID}}</span>
+  </div>
+  <div class="card-body fs-4">
+    <pre><code>
+        {{.Content}}
+      </code></pre>
+  </div>
+  <div class="card-footer text-muted d-flex justify-content-between">
+    <time>Created: {{.Created}}</time>
+    <time>Expires: {{.Expires}}</time>
+  </div>
+</div>
+{{ end }}
