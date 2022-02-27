@@ -1,21 +1,21 @@
 {{template "base" .}}
 
-{{define "title"}}Snippet #{{.ID}}{{ end }}
+{{define "title"}}Snippet #{{.Snippet.ID}}{{ end }}
 
 {{define "body"}}
 <div class="card">
   <div class="card-header d-flex justify-content-between">
-    <strong>{{.Title}}</strong>
-    <span>{{.ID}}</span>
+    <strong>{{.Snippet.Title}}</strong>
+    <span>{{.Snippet.ID}}</span>
   </div>
   <div class="card-body fs-4">
     <pre><code>
-        {{.Content}}
+        {{.Snippet.Content}}
       </code></pre>
   </div>
   <div class="card-footer text-muted d-flex justify-content-between">
-    <time>Created: {{.Created}}</time>
-    <time>Expires: {{.Expires}}</time>
+    <time>Created: {{.Snippet.Created}}</time>
+    <time>Expires: {{.Snippet.Expires}}</time>
   </div>
 </div>
 {{ end }}
